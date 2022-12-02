@@ -5,6 +5,18 @@ $green: #70a84b;
 $red: #ed5243;
 $anim_duration: 1.5s;
 
+@mixin ring_animation {
+    animation-duration: $anim_duration;
+    animation-name: diagram_start;
+    animation-timing-function: cubic-bezier(0, 1, 0.63, 0.99);
+}
+
+@mixin bar_animation {
+    animation-duration: $anim_duration;
+    animation-name: bar_start;
+    animation-timing-function: cubic-bezier(0,1.47,.61,1);
+}
+
 html {
     margin: 0;
     padding: 0;
@@ -55,8 +67,7 @@ html {
                     transform: rotate(-71deg);
 
                     circle:nth-child(2) {
-                        animation-duration: $anim_duration;
-                        animation-name: diagram_start;
+                        @include ring_animation;
                         z-index: 1;
                         transform-origin: center;
                         transform: rotate(-0deg);
@@ -66,6 +77,7 @@ html {
                     }
 
                     circle:nth-child(3) {
+                        @include ring_animation;
                         animation-duration: $anim_duration;
                         animation-name: diagram_start;
                         z-index: 4;
@@ -103,13 +115,13 @@ html {
                 display: flex;
                 color: #555555;
 
-                &__wrapper{
+                &__wrapper {
                     height: 37px;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
                 }
-                &__number {                    
+                &__number {
                     font-size: 40px;
                     line-height: 40px;
                 }
@@ -200,8 +212,7 @@ html {
             box-shadow: inset 0em 0em 4px $medium__grey;
             overflow: hidden;
             &__bar {
-                animation-duration: $anim_duration;
-                animation-name: bar_start;
+                @include bar_animation;
                 width: 30px;
                 height: 25px;
                 &__delta {
@@ -220,13 +231,11 @@ html {
 
 .grow {
     width: 25px;
-    animation-duration: $anim_duration;
-    animation-name: bar_start;
+    @include bar_animation;
 }
 .down {
     width: 35px;
-    animation-duration: $anim_duration;
-    animation-name: bar_start;
+    @include bar_animation;
 }
 .green {
     background-color: $green;

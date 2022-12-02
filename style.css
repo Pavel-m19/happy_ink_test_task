@@ -49,6 +49,8 @@ html {
           animation-duration: 1.5s;
   -webkit-animation-name: diagram_start;
           animation-name: diagram_start;
+  -webkit-animation-timing-function: cubic-bezier(0, 1, 0.63, 0.99);
+          animation-timing-function: cubic-bezier(0, 1, 0.63, 0.99);
   z-index: 1;
   transform-origin: center;
   transform: rotate(0deg);
@@ -61,6 +63,10 @@ html {
           animation-duration: 1.5s;
   -webkit-animation-name: diagram_start;
           animation-name: diagram_start;
+  -webkit-animation-timing-function: cubic-bezier(0, 1, 0.63, 0.99);
+          animation-timing-function: cubic-bezier(0, 1, 0.63, 0.99);
+  animation-duration: 1.5s;
+  animation-name: diagram_start;
   z-index: 4;
   transform-origin: center;
   transform: rotate(0deg);
@@ -187,6 +193,8 @@ html {
           animation-duration: 1.5s;
   -webkit-animation-name: bar_start;
           animation-name: bar_start;
+  -webkit-animation-timing-function: cubic-bezier(0, 1.47, 0.61, 1);
+          animation-timing-function: cubic-bezier(0, 1.47, 0.61, 1);
   width: 30px;
   height: 25px;
 }
@@ -206,6 +214,8 @@ html {
           animation-duration: 1.5s;
   -webkit-animation-name: bar_start;
           animation-name: bar_start;
+  -webkit-animation-timing-function: cubic-bezier(0, 1.47, 0.61, 1);
+          animation-timing-function: cubic-bezier(0, 1.47, 0.61, 1);
 }
 
 .down {
@@ -214,6 +224,8 @@ html {
           animation-duration: 1.5s;
   -webkit-animation-name: bar_start;
           animation-name: bar_start;
+  -webkit-animation-timing-function: cubic-bezier(0, 1.47, 0.61, 1);
+          animation-timing-function: cubic-bezier(0, 1.47, 0.61, 1);
 }
 
 .green {
