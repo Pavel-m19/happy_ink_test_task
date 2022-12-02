@@ -1,0 +1,251 @@
+$yellow_color: #fcd329;
+$light_grey: #ececec;
+$medium__grey: #ccc;
+$green: #70a84b;
+$red: #ed5243;
+$anim_duration: 1.5s;
+
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.test {
+    &__connections {
+        padding-top: 65px;
+        height: 240px;
+
+        svg {
+            width: 40px;
+            height: 175px;
+        }
+        &__plus {
+            line-height: 20px;
+            color: $medium__grey;
+            font-size: 20px;
+        }
+    }
+}
+
+.test {
+    &__wrapper {
+        display: flex;
+        gap: 5px;
+        flex-direction: row;
+        align-items: center;
+    }
+    &__diagram {
+        &__ring {
+            position: relative;
+            &__vector {
+                position: absolute;
+                svg {
+                    z-index: 0;
+                    border-radius: 50%;
+                    position: absolute;
+                    fill: transparent;
+                    stroke: $light_grey;
+                    stroke-width: 8px;
+                    width: 240px;
+                    height: 240px;
+                    stroke-dasharray: 722;
+                    stroke-dashoffset: 80;
+                    stroke-linecap: round;
+                    transform: rotate(-71deg);
+
+                    circle:nth-child(2) {
+                        animation-duration: $anim_duration;
+                        animation-name: diagram_start;
+                        z-index: 1;
+                        transform-origin: center;
+                        transform: rotate(-0deg);
+                        stroke-width: 10px;
+                        stroke: $green;
+                        stroke-dashoffset: calc(722 / 3);
+                    }
+
+                    circle:nth-child(3) {
+                        animation-duration: $anim_duration;
+                        animation-name: diagram_start;
+                        z-index: 4;
+                        transform-origin: center;
+                        transform: rotate(-0deg);
+                        stroke-width: 10px;
+                        stroke: $yellow_color;
+                        stroke-dashoffset: calc(722 / 3 * 2);
+                    }
+                }
+            }
+        }
+        &__wrapper {
+            margin-top: 23px;
+            width: 230px;
+        }
+        &__flag {
+            margin-top: -25px;
+            &_pic {
+                height: 26px;
+            }
+        }
+        &__text {
+            margin-bottom: 40px;
+            font-weight: 700;
+            width: 230px;
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &__percentage {
+                font-weight: 100;
+                margin-top: 10px;
+                display: flex;
+                color: #555555;
+
+                &__wrapper{
+                    height: 37px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+                &__number {                    
+                    font-size: 40px;
+                    line-height: 40px;
+                }
+                &__part {
+                    font-size: 21px;
+                    line-height: 21px;
+                }
+                &__symbol {
+                    padding-left: 8px;
+                    font-size: 10px;
+                }
+            }
+
+            &__loyalty {
+                margin-top: 5px;
+                color: #555555;
+            }
+
+            &__status {
+                margin-top: 8px;
+                color: $yellow_color;
+            }
+            &__information {
+                margin-top: 3px;
+                font-size: 10px;
+                color: $medium__grey;
+            }
+            &__grow {
+                margin-top: 10px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: $green;
+                &__triangle {
+                    width: 18px;
+                    height: 10px;
+                    fill: $green;
+                    stroke-linecap: round;
+                    stroke: $green;
+                    stroke-width: 1px;
+                }
+            }
+        }
+    }
+}
+
+.test__detailed {
+    &__wrapper {
+        padding-top: 15px;
+    }
+    &__item {
+        display: flex;
+        margin: 15px 0;
+        gap: 15px;
+        &__category {
+            width: 75px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        &__auditory {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            align-items: center;
+            font-size: 12px;
+            &__users {
+                display: flex;
+                align-items: baseline;
+                gap: 2px;
+                &__pic {
+                    width: 10px;
+                    height: 10px;
+                }
+                &__number {
+                    line-height: 13px;
+                    color: $medium__grey;
+                }
+            }
+            &__percents {
+            }
+        }
+        &__progress {
+            display: flex;
+            justify-content: space-between;
+            width: 90px;
+            height: 33px;
+            border-radius: 5px;
+            box-shadow: inset 0em 0em 4px $medium__grey;
+            overflow: hidden;
+            &__bar {
+                animation-duration: $anim_duration;
+                animation-name: bar_start;
+                width: 30px;
+                height: 25px;
+                &__delta {
+                    height: 15px;
+                    opacity: 0.7;
+                }
+            }
+            &__value {
+                line-height: 33px;
+                padding-right: 6px;
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+.grow {
+    width: 25px;
+    animation-duration: $anim_duration;
+    animation-name: bar_start;
+}
+.down {
+    width: 35px;
+    animation-duration: $anim_duration;
+    animation-name: bar_start;
+}
+.green {
+    background-color: $green;
+}
+.yellow {
+    background-color: $yellow_color;
+}
+.red {
+    background-color: $red;
+}
+
+@keyframes diagram_start {
+    from {
+        stroke-dashoffset: 722;
+    }
+}
+
+@keyframes bar_start {
+    from {
+        width: 0;
+    }
+}

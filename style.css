@@ -1,0 +1,251 @@
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.test__connections {
+  padding-top: 65px;
+  height: 240px;
+}
+.test__connections svg {
+  width: 40px;
+  height: 175px;
+}
+.test__connections__plus {
+  line-height: 20px;
+  color: #ccc;
+  font-size: 20px;
+}
+
+.test__wrapper {
+  display: flex;
+  gap: 5px;
+  flex-direction: row;
+  align-items: center;
+}
+.test__diagram__ring {
+  position: relative;
+}
+.test__diagram__ring__vector {
+  position: absolute;
+}
+.test__diagram__ring__vector svg {
+  z-index: 0;
+  border-radius: 50%;
+  position: absolute;
+  fill: transparent;
+  stroke: #ececec;
+  stroke-width: 8px;
+  width: 240px;
+  height: 240px;
+  stroke-dasharray: 722;
+  stroke-dashoffset: 80;
+  stroke-linecap: round;
+  transform: rotate(-71deg);
+}
+.test__diagram__ring__vector svg circle:nth-child(2) {
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-name: diagram_start;
+          animation-name: diagram_start;
+  z-index: 1;
+  transform-origin: center;
+  transform: rotate(0deg);
+  stroke-width: 10px;
+  stroke: #70a84b;
+  stroke-dashoffset: 240.6666666667;
+}
+.test__diagram__ring__vector svg circle:nth-child(3) {
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-name: diagram_start;
+          animation-name: diagram_start;
+  z-index: 4;
+  transform-origin: center;
+  transform: rotate(0deg);
+  stroke-width: 10px;
+  stroke: #fcd329;
+  stroke-dashoffset: 481.3333333333;
+}
+.test__diagram__wrapper {
+  margin-top: 23px;
+  width: 230px;
+}
+.test__diagram__flag {
+  margin-top: -25px;
+}
+.test__diagram__flag_pic {
+  height: 26px;
+}
+.test__diagram__text {
+  margin-bottom: 40px;
+  font-weight: 700;
+  width: 230px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.test__diagram__text__percentage {
+  font-weight: 100;
+  margin-top: 10px;
+  display: flex;
+  color: #555555;
+}
+.test__diagram__text__percentage__wrapper {
+  height: 37px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.test__diagram__text__percentage__number {
+  font-size: 40px;
+  line-height: 40px;
+}
+.test__diagram__text__percentage__part {
+  font-size: 21px;
+  line-height: 21px;
+}
+.test__diagram__text__percentage__symbol {
+  padding-left: 8px;
+  font-size: 10px;
+}
+.test__diagram__text__loyalty {
+  margin-top: 5px;
+  color: #555555;
+}
+.test__diagram__text__status {
+  margin-top: 8px;
+  color: #fcd329;
+}
+.test__diagram__text__information {
+  margin-top: 3px;
+  font-size: 10px;
+  color: #ccc;
+}
+.test__diagram__text__grow {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #70a84b;
+}
+.test__diagram__text__grow__triangle {
+  width: 18px;
+  height: 10px;
+  fill: #70a84b;
+  stroke-linecap: round;
+  stroke: #70a84b;
+  stroke-width: 1px;
+}
+
+.test__detailed__wrapper {
+  padding-top: 15px;
+}
+.test__detailed__item {
+  display: flex;
+  margin: 15px 0;
+  gap: 15px;
+}
+.test__detailed__item__category {
+  width: 75px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.test__detailed__item__auditory {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+  font-size: 12px;
+}
+.test__detailed__item__auditory__users {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+.test__detailed__item__auditory__users__pic {
+  width: 10px;
+  height: 10px;
+}
+.test__detailed__item__auditory__users__number {
+  line-height: 13px;
+  color: #ccc;
+}
+.test__detailed__item__progress {
+  display: flex;
+  justify-content: space-between;
+  width: 90px;
+  height: 33px;
+  border-radius: 5px;
+  box-shadow: inset 0em 0em 4px #ccc;
+  overflow: hidden;
+}
+.test__detailed__item__progress__bar {
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-name: bar_start;
+          animation-name: bar_start;
+  width: 30px;
+  height: 25px;
+}
+.test__detailed__item__progress__bar__delta {
+  height: 15px;
+  opacity: 0.7;
+}
+.test__detailed__item__progress__value {
+  line-height: 33px;
+  padding-right: 6px;
+  font-size: 10px;
+}
+
+.grow {
+  width: 25px;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-name: bar_start;
+          animation-name: bar_start;
+}
+
+.down {
+  width: 35px;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-name: bar_start;
+          animation-name: bar_start;
+}
+
+.green {
+  background-color: #70a84b;
+}
+
+.yellow {
+  background-color: #fcd329;
+}
+
+.red {
+  background-color: #ed5243;
+}
+
+@-webkit-keyframes diagram_start {
+  from {
+    stroke-dashoffset: 722;
+  }
+}
+
+@keyframes diagram_start {
+  from {
+    stroke-dashoffset: 722;
+  }
+}
+@-webkit-keyframes bar_start {
+  from {
+    width: 0;
+  }
+}
+@keyframes bar_start {
+  from {
+    width: 0;
+  }
+}/*# sourceMappingURL=style.css.map */
